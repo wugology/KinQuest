@@ -11,13 +11,29 @@ main {
   align-items: center;
   justify-content:left;
 }
+
+input {
+    width:125px;
+}
+
 </style>
 <body>
 <main>
 <form>
 Name of Language <br><input type="text"><br><br>
+<!---Autocomplete from Ethnologue List--->
+
+Type of Source <br><select>
+    <option selected disabled hidden value="none"></option>
+    <option value="speaker">Native speaker</option>
+    <option value="researcher">Researcher</option>
+    <option value="grammar">Reference grammar</option>
+    <option value="other">Other source...</option>
+</select>
+<br><br>
+
 Source of Information <br><input type="text"><br><br>
-Type of Source <br><input type="text"><br><br>
+
 Region of Source <br><input type="text"><br><br>
 </form>
 
