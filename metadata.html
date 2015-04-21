@@ -15,15 +15,23 @@ main {
 input {
     width:125px;
 }
+#other{
+    display:none;
+}
+
 
 </style>
 <body>
 <main>
-<form>
-Name of Language <br><input type="text"><br><br>
-<!---Autocomplete from Ethnologue List--->
+<form method="post" action="form2.php">
+Name of Language
+<br>
+    <input type="text" id="language">
+    <!---Autocomplete from Ethnologue List--->
+<br><br>
 
-Type of Source <br><select>
+Type of Source <br>
+<select id="source_type">
     <option selected disabled hidden value="none"></option>
     <option value="speaker">Native speaker</option>
     <option value="researcher">Researcher</option>
@@ -32,13 +40,28 @@ Type of Source <br><select>
 </select>
 <br><br>
 
-Source of Information <br><input type="text"><br><br>
+<!---Make the below appear if "other" is selected above--->
+<div id="other">
+Other source <br>
+<input type="text" id="other source">
+<br><br>
+</div>
 
-Region of Source <br><input type="text"><br><br>
+
+Source of Information <br>
+<input type="text" id="source_of_information">
+<br><br>
+
+Region of Source <br>
+<input type="text" id="region">
+<br><br>
+
+
+<input type="submit" value="Continue">
+
+
 </form>
-
 </main>
-<a href="./instructions.html">
-<button>Continue</button>
+
 </a>
 </body>
