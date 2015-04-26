@@ -26,12 +26,12 @@ input {
 <form method="post" action="form2.php">
 Name of Language
 <br>
-    <input type="text" id="language">
+    <input type="text" required id="language">
     <!---Autocomplete from Ethnologue List--->
 <br><br>
 
 Type of Source <br>
-<select id="source_type">
+<select required id="source_type">
     <option selected disabled hidden value="none"></option>
     <option value="speaker">Native speaker</option>
     <option value="researcher">Researcher</option>
@@ -49,11 +49,11 @@ Other source <br>
 
 
 Source of Information <br>
-<input type="text" id="source_of_information">
+<input type="text" required id="source_of_information" placeholder="Name of person, book, or other source">
 <br><br>
 
 Region of Source <br>
-<input type="text" id="region">
+<input type="text" required id="region">
 <br><br>
 
 
