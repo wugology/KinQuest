@@ -23,24 +23,63 @@ input {
     width: 75px;
 }
 
+#other{
+    display:none;
+}
+
 </style>
 <body>
 <center>
 <h1>KinQuest<h1>
 </center>
+<form action="process.php" method="get">
+Name of Language
+<br>
+    <input type="text" required id="language" style="width:300px">
+    <!---Autocomplete from Ethnologue List--->
+<br><br>
+
+Type of Source <br>
+<select required id="source_type">
+    <option selected disabled hidden value="none"></option>
+    <option value="speaker">Native speaker</option>
+    <option value="researcher">Researcher</option>
+    <option value="grammar">Reference grammar</option>
+    <option value="other">Other source...</option>
+</select>
+<br><br>
+
+<!---Make the below appear if "other" is selected above--->
+<div id="other">
+Other source <br>
+<input type="text" id="other_source" style="width:300px">
+<br><br>
+</div>
+
+
+Source of Information <br>
+<input type="text" required id="source_of_information" placeholder="Name of person, book, or other source" style="width:300px">
+<br><br>
+
+Region of Source <br>
+<input type="text" required id="region" style="width:300px">
+<br><br>
+
+
 <div id="family">
 
 <div id="generation">
-<!---parents--->
+<!---grandparents--->
 </div>
 
 <div id="generation">
+<!---parents--->
     <div id="member">
     <img src="./img/female.png"
             style="height: 75px"
             id="mother"/>
             <br>
-    <input type="text" placeholder="mother">
+    <input type="text" id="mother" placeholder="mother">
     </div>
 
     <div id="member">
@@ -48,14 +87,14 @@ input {
             style="height: 75px"
             id="father"/>
             <br>
-    <input type="text" placeholder="father">
+    <input type="text" id="father" placeholder="father">
     </div>
     <div id="member">
     <img src="./img/neutral.png"
             style="height: 75px"
             id="parent"/>
             <br>
-    <input type="text" placeholder="parent">
+    <input type="text" id="parent" placeholder="parent">
     </div>
 
 </div>
@@ -68,7 +107,7 @@ input {
             style="height: 75px"
             id="sibling"/>
             <br>
-    <input type="text" placeholder="sibling">
+    <input type="text" id="sibling" placeholder="sibling">
     </div>
 
     <div id="member">
@@ -76,7 +115,7 @@ input {
             style="height: 75px"
             id="brother"/>
             <br>
-    <input type="text" placeholder="brother">
+    <input type="text" id="brother" placeholder="brother">
     </div>
     
     <div id="member">
@@ -84,7 +123,7 @@ input {
             style="height: 75px"
             id="sister"/>
             <br>
-    <input type="text" placeholder="sister">
+    <input type="text" id="sister" placeholder="sister">
     </div>
     
         <div id="member">
@@ -92,23 +131,23 @@ input {
             style="height: 75px"
             id="ego"/>
             <br>
-    <input type="text" placeholder="ego/self">
+    <input type="text" id="ego" placeholder="ego/self">
     </div>
     
     <div id="member">
     <img src="./img/neutral.png"
             style="height: 75px"
-            id="sibling"/>
+            id="spouse"/>
             <br>
-    <input type="text" placeholder="spouse">
+    <input type="text" id="spouse" placeholder="spouse">
     </div>
 
     <div id="member">
     <img src="./img/male.png"
             style="height: 75px"
-            id="brother"/>
+            id="husband"/>
             <br>
-    <input type="text" placeholder="husband">
+    <input type="text" id="husband" placeholder="husband">
     </div>
     
     <div id="member">
@@ -116,7 +155,7 @@ input {
             style="height: 75px"
             id="sister"/>
             <br>
-    <input type="text" placeholder="wife">
+    <input type="text" id="sister" placeholder="wife">
     </div>
     
 </div>
@@ -128,24 +167,24 @@ input {
 <div id="member">
     <img src="./img/female.png"
             style="height: 75px"
-            id="daughter"/>
+            id="niece"/>
             <br>
-    <input type="text" placeholder="niece">
+    <input type="text" id="niece" placeholder="niece">
     </div>
     
     <div id="member">
     <img src="./img/male.png"
             style="height: 75px"
-            id="son"/>
+            id="nephew"/>
             <br>
-    <input type="text" placeholder="nephew">
+    <input type="text" id="nephew" placeholder="nephew">
     </div>
     <div id="member">
     <img src="./img/neutral.png"
             style="height: 75px"
             id="child"/>
             <br>
-    <input type="text" placeholder="niece/nephew">
+    <input type="text" id="niece/nephew" placeholder="niece/nephew">
     </div>
 
 
@@ -156,7 +195,7 @@ input {
             style="height: 75px"
             id="daughter"/>
             <br>
-    <input type="text" placeholder="daughter">
+    <input type="text" id="daughter" placeholder="daughter">
     </div>
     
     <div id="member">
@@ -164,14 +203,14 @@ input {
             style="height: 75px"
             id="son"/>
             <br>
-    <input type="text" placeholder="son">
+    <input type="text" id="son" placeholder="son">
     </div>
     <div id="member">
     <img src="./img/neutral.png"
             style="height: 75px"
             id="child"/>
             <br>
-    <input type="text" placeholder="child">
+    <input type="text" id="child" placeholder="child">
     </div>
 
 
@@ -186,14 +225,20 @@ input {
 </div>
 
 </body>
+
+
 <center>
-<a href="./instructions.html">
-<button>Submit</button>
-</a>
+<input type="submit" value="Submit">
+<!---
+Add pop-up here which will ask for confirmation,
+as well as informed consent to use data for research
+--->
 </center>
 
+</form>
 
 <script language="javascript">
+//this doesn't work yet
     function changeImage() {
         if(this.src === "./img/neutral.png"){
             this.src = "./img/male.png";
